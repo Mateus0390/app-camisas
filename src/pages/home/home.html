@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <ion-icon name="shirt" style="margin-right: 8px;"></ion-icon>
+      Camisas de Futebol
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-home">
+  <button ion-button icon-start block (click)="showPrompt()">Adicionar Camisas</button>
+  <ion-list>
+    <ion-item *ngFor="let item of vetor2">
+      <ion-thumbnail item-start>
+        <img src="{{item.foto}}" alt="Camisa">
+      </ion-thumbnail>
+      <h2>{{item.nome}}</h2>
+      <p>Nº: {{item.numero}}</p>
+      <p>Preço: {{item.preco}}</p>
+      <button ion-button clear item-end color="danger" (click)="showConfirm(item)">Excluir</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
